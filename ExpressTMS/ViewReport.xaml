@@ -1,0 +1,11 @@
+﻿<Window x:Class="ExpressTMS.ViewReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms" 
+        Title="SmartTaxi Report Viewer" Height="548" Width="634" Icon="/ExpressTMS;component/Resources/report.png" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <WindowsFormsHost Name="windowsFormsHost1">
+            <rv:ReportViewer x:Name="_reportViewer"/>
+        </WindowsFormsHost>
+    </Grid>
+</Window>

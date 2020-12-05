@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="ExpressTaxi" EntityNamespace="ExpressTMS" ContextNamespace="ExpressTMS" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="AppliedTaxes">
+    <Type Name="AppliedTax">
+      <Column Name="TaxName" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TaxAmount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TaxDescription" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Company" Member="Companies">
+    <Type Name="Company">
+      <Column Name="CMP_COD" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CMP_NAME" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="CMP_ADDRESS" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="VIL_NAME" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="PAR_NAME" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="COU_NAME" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="CMP_PHONE" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CMP_FAX" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CMP_EMAIL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CMP_REG_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_MODIFIED" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="RefCompany_Type11" Member="FinancialTransactions" ThisKey="CMP_COD" OtherKey="CMP_COD" Type="FinancialTransaction" DeleteRule="NO ACTION" />
+      <Association Name="RefCountry3" Member="Country" ThisKey="COU_NAME" OtherKey="COU_NAME" Type="Country" IsForeignKey="true" />
+      <Association Name="RefParish2" Member="Parish" ThisKey="PAR_NAME" OtherKey="PAR_NAME" Type="Parish" IsForeignKey="true" />
+      <Association Name="RefVillage1" Member="Village" ThisKey="VIL_NAME" OtherKey="VIL_NAME" Type="Village" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Country" Member="Countries">
+    <Type Name="Country">
+      <Column Name="COU_NAME" Type="System.String" DbType="NVarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="RefCountry3" Member="Companies" ThisKey="COU_NAME" OtherKey="COU_NAME" Type="Company" DeleteRule="NO ACTION" />
+      <Association Name="RefCountry6" Member="Drivers" ThisKey="COU_NAME" OtherKey="COU_NAME" Type="Driver" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="Document_Type" Member="Document_Types">
+    <Type Name="Document_Type">
+      <Column Name="DOC_TYPE_NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="RefDocument_Type10" Member="FinancialTransactions" ThisKey="DOC_TYPE_NAME" OtherKey="DOC_TYPE_NAME" Type="FinancialTransaction" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="Driver" Member="Drivers">
+    <Type Name="Driver">
+      <Column Name="DRV_COD" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DRV_LICENSE" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DRV_NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DRV_ADDRESS" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="VIL_NAME" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="PAR_NAME" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="COU_NAME" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="DRV_PHONE" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DRV_CELL" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DRV_EMAIL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DRV_REG_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_MODIFIED" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="RefCountry6" Member="Country" ThisKey="COU_NAME" OtherKey="COU_NAME" Type="Country" IsForeignKey="true" />
+      <Association Name="RefDriver8" Member="FinancialTransactions" ThisKey="DRV_COD" OtherKey="DRV_COD" Type="FinancialTransaction" DeleteRule="NO ACTION" />
+      <Association Name="RefParish5" Member="Parish" ThisKey="PAR_NAME" OtherKey="PAR_NAME" Type="Parish" IsForeignKey="true" />
+      <Association Name="RefVillage4" Member="Village" ThisKey="VIL_NAME" OtherKey="VIL_NAME" Type="Village" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="FinancialTransaction" Member="FinancialTransactions">
+    <Type Name="FinancialTransaction">
+      <Column Name="TRANS_COD" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DOC_NUM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DRV_COD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRANS_DESTINATION" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="SERV_NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DOC_TYPE_NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TRANS_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DOCUMENT_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TRANS_VALUE" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TRANS_REDUCTION" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TRANS_FINAL_VALUE" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="VOUCHER_NUM" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NO_PAX" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRANS_COMMENTS" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="LAST_MODIFIED" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CMP_COD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isValid" Member="IsValid" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="RefCompany_Type11" Member="Company" ThisKey="CMP_COD" OtherKey="CMP_COD" Type="Company" IsForeignKey="true" />
+      <Association Name="RefDocument_Type10" Member="Document_Type" ThisKey="DOC_TYPE_NAME" OtherKey="DOC_TYPE_NAME" Type="Document_Type" IsForeignKey="true" />
+      <Association Name="RefDriver8" Member="Driver" ThisKey="DRV_COD" OtherKey="DRV_COD" Type="Driver" IsForeignKey="true" />
+      <Association Name="RefService_Type9" Member="Service_Type" ThisKey="SERV_NAME" OtherKey="SERV_NAME" Type="Service_Type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Parish" Member="Parishes">
+    <Type Name="Parish">
+      <Column Name="PAR_NAME" Type="System.String" DbType="NVarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="RefParish2" Member="Companies" ThisKey="PAR_NAME" OtherKey="PAR_NAME" Type="Company" DeleteRule="NO ACTION" />
+      <Association Name="RefParish5" Member="Drivers" ThisKey="PAR_NAME" OtherKey="PAR_NAME" Type="Driver" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="Service_Type" Member="Service_Types">
+    <Type Name="Service_Type">
+      <Column Name="SERV_NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="RefService_Type9" Member="FinancialTransactions" ThisKey="SERV_NAME" OtherKey="SERV_NAME" Type="FinancialTransaction" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="UniqueNumbers">
+    <Type Name="UniqueNumber">
+      <Column Name="UniqueName" Type="System.String" DbType="NVarChar(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UniqueValue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Village" Member="Villages">
+    <Type Name="Village">
+      <Column Name="VIL_NAME" Type="System.String" DbType="NVarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="RefVillage1" Member="Companies" ThisKey="VIL_NAME" OtherKey="VIL_NAME" Type="Company" DeleteRule="NO ACTION" />
+      <Association Name="RefVillage4" Member="Drivers" ThisKey="VIL_NAME" OtherKey="VIL_NAME" Type="Driver" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+</Database>

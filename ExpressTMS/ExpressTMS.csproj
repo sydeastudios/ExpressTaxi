@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A853F435-C267-4F3A-8398-E76CDBA2CFF9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExpressTMS</RootNamespace>
+    <AssemblyName>ExpressTMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MainICO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Sydea.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.CryptoExt">
+      <HintPath>..\BouncyCastle.CryptoExt.dll</HintPath>
+    </Reference>
+    <Reference Include="Fluent">
+      <HintPath>..\..\..\..\..\Fluent Ribbon Control Suite 2.0\.NET 4.0\Assembly\Debug\Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\..\..\DotNetZipLib-DevKit-v1.9\Tools\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Activate.cs" />
+    <Compile Include="AddNewCompany.xaml.cs">
+      <DependentUpon>AddNewCompany.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewDriver.xaml.cs">
+      <DependentUpon>AddNewDriver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddTransaction.xaml.cs">
+      <DependentUpon>AddTransaction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BackupDatabase.cs" />
+    <Compile Include="CompanyFilter.xaml.cs">
+      <DependentUpon>CompanyFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CompnaySearch.xaml.cs">
+      <DependentUpon>CompnaySearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="DatePeriodPicker.xaml.cs">
+      <DependentUpon>DatePeriodPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DriverFilterWnd.xaml.cs">
+      <DependentUpon>DriverFilterWnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DriverSearch.xaml.cs">
+      <DependentUpon>DriverSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmailReport.xaml.cs">
+      <DependentUpon>EmailReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnterKey.xaml.cs">
+      <DependentUpon>EnterKey.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EULA.xaml.cs">
+      <DependentUpon>EULA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpressTaxi.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpressTaxi.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup.xaml.cs">
+      <DependentUpon>Lookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MailReports.cs" />
+    <Compile Include="ModifyParameters.xaml.cs">
+      <DependentUpon>ModifyParameters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationWindow.xaml.cs">
+      <DependentUpon>NotificationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDataset.cs">
+      <DependentUpon>ReportDataset.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RestoreDB.xaml.cs">
+      <DependentUpon>RestoreDB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Splash.xaml.cs">
+      <DependentUpon>Splash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Splasher.cs" />
+    <Compile Include="DataHandlers.cs" />
+    <Compile Include="TransactionSearch.xaml.cs">
+      <DependentUpon>TransactionSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrialExpired.xaml.cs">
+      <DependentUpon>TrialExpired.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewReport.xaml.cs">
+      <DependentUpon>ViewReport.xaml</DependentUpon>
+    </Compile>
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewCompany.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddTransaction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CompanyFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CompnaySearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DatePeriodPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DriverFilterWnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DriverSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmailReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EnterKey.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EULA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExpressionLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DispatcherHelper.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ModifyParameters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotificationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RestoreDB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Splash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransactionSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrialExpired.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MessageListener.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="AccumulatedByDriver.rdlc" />
+    <EmbeddedResource Include="AccumulatedPaid.rdlc" />
+    <EmbeddedResource Include="HotelInformation.rdlc" />
+    <EmbeddedResource Include="ReceiptVoucher.rdlc" />
+    <EmbeddedResource Include="ServicesCurrentDay.rdlc" />
+    <EmbeddedResource Include="ServicesReport.rdlc" />
+    <None Include="app.config" />
+    <EmbeddedResource Include="CompanyList.rdlc" />
+    <EmbeddedResource Include="DriverList.rdlc" />
+    <None Include="ExpressTaxi.dbml.layout">
+      <DependentUpon>ExpressTaxi.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ExpressTaxi.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ExpressTaxi.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="ReportDataset.xsc">
+      <DependentUpon>ReportDataset.xsd</DependentUpon>
+    </None>
+    <None Include="ReportDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportDataset.xss">
+      <DependentUpon>ReportDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Sydea.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MainICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edit_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add_transaction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edit_transaction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\delete_transaction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\view_transactions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\modify_parameters.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\payment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ac_driver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ac_paid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hotel_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\help_and_support.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\backupdb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\restoredb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\system_preferences.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MainICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\head-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\notification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lookup_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sydea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\3floppy_mount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hp_printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\list_add_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\recyclebin_full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\copy48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Todo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bannerabt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\report_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\list_add2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\decryptfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Edit_Transactions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\new_jersey_license_plate.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,9 @@
+﻿1. ADD Transaction Form,
+		Generate and Print Transaction Invoice
+2. Reports
+		Services Current Day		DONE
+		Accumulated by Driver
+		Accumulated Paid
+		Hotel Information
+3. Restore Database
+4. Settings

@@ -1,0 +1,13 @@
+﻿<Window x:Class="ExpressTMS.TrialExpired"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Trial Expired" Height="300" Width="536" Icon="/ExpressTMS;component/MainICO.ico" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Image Height="105" Name="image3" Source="/ExpressTMS;component/Resources/banner.png" Stretch="Fill" VerticalAlignment="Top" />
+        <Image Height="71" HorizontalAlignment="Left" Margin="0,111,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="84" Source="/ExpressTMS;component/Resources/notification.png" />
+        <TextBlock Height="71" HorizontalAlignment="Left" Margin="90,111,0,0" Name="textBlock1" Text="Your trial period of the Express Taxi Management Information System has expired. Thank you for evaluating the Express TMS Software, in order to continue to use this software you will need to purchase a license from its developers. The current license installed on this computer is a single seat 30 day trial license intended for evaluative purposes." VerticalAlignment="Top" Width="424" TextWrapping="Wrap" />
+        <TextBlock Height="29" HorizontalAlignment="Left" Margin="90,188,0,0" Name="textBlock2" Text="You can obtain a license by contacting the developer at pyatex@hotmail.com or darreneb2@yahoo.com." VerticalAlignment="Top" TextWrapping="Wrap" Width="424" />
+        <Button Content="Exit" Height="23" HorizontalAlignment="Left" Margin="158,238,0,0" Name="button1" VerticalAlignment="Top" Width="75" IsCancel="True" />
+        <Button Content="Unlock" Height="23" HorizontalAlignment="Left" Margin="239,238,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" />
+    </Grid>
+</Window>

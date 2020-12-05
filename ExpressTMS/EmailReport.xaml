@@ -1,0 +1,38 @@
+﻿<Window x:Class="ExpressTMS.EmailReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms" 
+        Title="Email Report" Height="500" Width="514" Icon="/ExpressTMS;component/MainICO.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Image Height="105" Name="image3" Source="/ExpressTMS;component/Resources/banner.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,0,-1,0" />
+        <GroupBox Header="Reports to Email:" Height="223" Margin="0,111,0,0" Name="groupBox1" VerticalAlignment="Top">
+            <Grid>
+                <TextBlock x:Name="DriverList" Margin="51,29,0,0" HorizontalAlignment="Left" Width="404" Height="21" VerticalAlignment="Top">
+                    <Hyperlink x:Name="DriverListRpt" NavigateUri="#" RequestNavigate="DriverListRpt_RequestNavigate">
+                                Drivers List Report
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock Height="21" HorizontalAlignment="Left" Margin="51,56,0,0" Name="textBlock1" VerticalAlignment="Top" Width="404">
+                    <Hyperlink Name="hyperlink1" NavigateUri="#" RequestNavigate="hyperlink1_RequestNavigate">
+                        Company List Report
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock Height="21" HorizontalAlignment="Left" Margin="51,83,0,0" Name="textBlock2" VerticalAlignment="Top" Width="404"><Hyperlink Name="hyperlink2" NavigateUri="#" RequestNavigate="hyperlink2_RequestNavigate">Services Current Day Report</Hyperlink></TextBlock>
+                <TextBlock Height="21" HorizontalAlignment="Left" Margin="51,108,0,0" Name="textBlock3" VerticalAlignment="Top" Width="404"><Hyperlink Name="hyperlink3" NavigateUri="#" RequestNavigate="hyperlink3_RequestNavigate">Accumulated by Driver Report</Hyperlink></TextBlock>
+                <TextBlock Height="21" HorizontalAlignment="Left" Margin="51,135,0,0" Name="textBlock4" VerticalAlignment="Top" Width="404"><Hyperlink Name="hyperlink4" NavigateUri="#" RequestNavigate="hyperlink4_RequestNavigate">Accumulated Paid Report</Hyperlink></TextBlock>
+                <TextBlock Height="21" HorizontalAlignment="Left" Margin="51,162,0,0" Name="textBlock5" VerticalAlignment="Top" Width="404"><Hyperlink Name="hyperlink5" NavigateUri="#" RequestNavigate="hyperlink5_RequestNavigate">Hotel Information</Hyperlink></TextBlock>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Export Format" Height="74" Margin="0,334,0,0" Name="groupBox2" VerticalAlignment="Top">
+            <Grid>
+                <Label Content="Export Reports as:" Height="28" HorizontalAlignment="Left" Margin="6,12,0,0" Name="label1" VerticalAlignment="Top" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="126,14,0,0" Name="comboBox1" VerticalAlignment="Top" Width="316">
+                    <ComboBoxItem Content="Microsoft Word (*.doc)" />
+                    <ComboBoxItem Content="Microsoft Excel (*.xls)" />
+                    <ComboBoxItem Content="Adobe PDF (*.pdf)" />
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+        <Button Content="Close" Height="23" Margin="205,438,212,0" Name="button1" VerticalAlignment="Top" Click="button1_Click" />
+    </Grid>
+</Window>

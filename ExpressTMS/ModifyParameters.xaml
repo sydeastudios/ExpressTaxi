@@ -1,0 +1,30 @@
+﻿<Window x:Class="ExpressTMS.ModifyParameters"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Modify Parameters" Height="566" Width="516" ResizeMode="NoResize" Icon="/ExpressTMS;component/Resources/modify_parameters.png" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Image Height="92" Name="image1" Source="/ExpressTMS;component/Resources/banner.png" Stretch="Fill" VerticalAlignment="Top" />
+        <Button Content="Close" Height="23" Name="button2" VerticalAlignment="Top" Click="button2_Click" Margin="0,502,419,0" HorizontalAlignment="Right" Width="75" />
+        <Button Content="Delete" Height="23" Margin="0,502,338,0" Name="button3" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="button3_Click" />
+        <ListView Margin="0,239,0,0" Name="listView1" Height="257" VerticalAlignment="Top" SelectionChanged="listView1_SelectionChanged" SelectionMode="Single">
+            <ListView.View>
+                <GridView AllowsColumnReorder="true">
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=TaxName}" Header="Tax Name" Width="100" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=TaxAmount}" Header="Amount Levied" Width="100" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=TaxDescription}" Header="Description" Width="300" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <GroupBox Header="Add New Tax" Height="135" Margin="0,98,0,0" Name="groupBox1" VerticalAlignment="Top">
+            <Grid>
+                <Label Content="Name of Tax:" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="15,14,0,0" Name="label1" VerticalAlignment="Top" />
+                <Label Content="Amount:" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="39,43,0,0" Name="label2" VerticalAlignment="Top" />
+                <Label Content="Description:" Height="28" HorizontalAlignment="Left" Margin="27,78,0,0" Name="label3" VerticalAlignment="Top" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="114,16,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="114,48,0,0" Name="textBox2" VerticalAlignment="Top" Width="120" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="114,83,0,0" Name="textBox3" VerticalAlignment="Top" Width="304" />
+                <Button Click="button1_Click" Content="Save" Height="23" HorizontalAlignment="Left" Margin="343,16,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

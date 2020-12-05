@@ -1,0 +1,78 @@
+﻿<Window x:Class="ExpressTMS.AddTransaction"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Transaction" Height="620" Width="632" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/ExpressTMS;component/Resources/add_transaction.png" Loaded="Window_Loaded">
+    <Grid>
+        <ToolBar Height="60" Name="toolBar1" VerticalAlignment="Top">
+            <Button Name="SaveTransaction" ToolTip="Saves the Transaction." Click="SaveTransaction_Click">
+                <Image Source="resources/3floppy_mount.png" Height="48" />
+            </Button>
+            <Button Name="CancelTransaction" ToolTip="Cancels the Transaction and resets the form." Click="CancelTransaction_Click">
+                <Image Source="resources/stop.png" Height="48" />
+            </Button>
+            <Separator/>
+            <Button Name="PrintLastTransaction" ToolTip="Prints the last saved or active transaction." Click="PrintLastTransaction_Click">
+                <Image Source="resources/printer.png" Height="48" />
+            </Button>
+            <Button Name="DeleteTransaction" ToolTip="Voids the active transaction (irreversible)." Click="DeleteTransaction_Click">
+                <Image Source="resources/recyclebin_full.png" Height="48" />
+            </Button>
+            <Button Name="CopyTransaction" ToolTip="Create a new transaction with the same contents." Click="CopyTransaction_Click">
+                <Image Source="resources/copy48.png" Height="48" />
+            </Button>
+            <Separator/>
+            <Button Name="AddCompany" ToolTip="Add a new company." Click="AddCompany_Click">
+                <Image Source="resources/add_big.png" Height="48" />
+            </Button>
+            <Button Name="AddDriver" ToolTip="Add a new taxi driver." Click="AddDriver_Click">
+                <Image Source="resources/list_add_user.png" Height="48" />
+            </Button>
+        </ToolBar>
+        <TabControl Margin="0,66,0,0" Name="tabControl1">
+            <TabItem Header="Transactions" Name="tabItem1">
+                <Grid>
+                    <GroupBox Header="Transaction/Service Information" Height="438" Margin="6,10,6,0" Name="groupBox1" VerticalAlignment="Top" Width="588">
+                        <Grid>
+                            <Label Content="Doc. No:" FontWeight="Bold" Foreground="#FF0000F1" Height="28" HorizontalAlignment="Left" Margin="7,17,0,0" Name="label1" VerticalAlignment="Top" />
+                            <Label Content="Date:" FontWeight="Bold" Foreground="Blue" Height="28" HorizontalAlignment="Left" Margin="295,17,0,0" Name="label2" VerticalAlignment="Top" />
+                            <Label Content="License Plate:" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="7,51,0,0" Name="label3" VerticalAlignment="Top" />
+                            <Label Content="Driver Name:" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="250,53,0,0" Name="label4" VerticalAlignment="Top" />
+                            <Label Content="Tour Comapny:" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="7,85,0,0" Name="label5" VerticalAlignment="Top" />
+                            <Label Content="Destination:" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="7,119,0,0" Name="label6" VerticalAlignment="Top" />
+                            <Label Content="Service Type:" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="7,153,0,0" Name="label7" VerticalAlignment="Top" />
+                            <Label Content="Document Type:" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="7,187,0,0" Name="label8" VerticalAlignment="Top" />
+                            <Label Content="Transaction Date:" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="7,221,0,0" Name="label9" VerticalAlignment="Top" />
+                            <Label Content="Document Value:" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="7,255,0,0" Name="label10" VerticalAlignment="Top" />
+                            <Label Content="Reduction:" FontWeight="Normal" Height="28" HorizontalAlignment="Left" Margin="250,257,0,0" Name="label11" VerticalAlignment="Top" />
+                            <Label Content="Payment Amount:" FontWeight="Bold" Foreground="Blue" Height="28" HorizontalAlignment="Left" Margin="7,289,0,0" Name="label12" VerticalAlignment="Top" />
+                            <Label Content="Voucher No:" FontWeight="Normal" Height="28" HorizontalAlignment="Left" Margin="7,323,0,0" Name="label13" VerticalAlignment="Top" />
+                            <Label Content="No. Pax:" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="250,325,0,0" Name="label14" VerticalAlignment="Top" />
+                            <Label Content="Comments:" FontWeight="Normal" Height="28" HorizontalAlignment="Left" Margin="7,357,0,0" Name="label15" VerticalAlignment="Top" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="128,19,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" IsReadOnly="True" FontWeight="Bold" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="341,17,0,0" Name="textBox2" VerticalAlignment="Top" Width="218" IsReadOnly="True" FontWeight="Bold" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="128,53,0,0" Name="textBox3" VerticalAlignment="Top" Width="95" TextChanged="textBox3_TextChanged" />
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="341,53,0,0" Name="comboBox1" VerticalAlignment="Top" Width="218" SelectionChanged="comboBox1_SelectionChanged" />
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="128,87,0,0" Name="comboBox2" VerticalAlignment="Top" Width="431" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="128,122,0,0" Name="textBox4" VerticalAlignment="Top" Width="431" />
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="128,153,0,0" Name="comboBox3" VerticalAlignment="Top" Width="204" />
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="128,187,0,0" Name="comboBox4" VerticalAlignment="Top" Width="204" />
+                            <DatePicker Height="25" HorizontalAlignment="Left" Margin="128,221,0,0" Name="datePicker1" VerticalAlignment="Top" Width="204" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="128,259,0,0" Name="textBox5" VerticalAlignment="Top" Width="116" TextChanged="textBox5_TextChanged" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="322,256,0,0" Name="textBox6" VerticalAlignment="Top" Width="116" TextChanged="textBox6_TextChanged" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="128,291,0,0" Name="textBox7" VerticalAlignment="Top" Width="116" IsReadOnly="True" FontWeight="Bold" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="128,323,0,0" Name="textBox8" VerticalAlignment="Top" Width="116" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="322,323,0,0" Name="textBox9" VerticalAlignment="Top" Width="116" />
+                            <TextBox Height="50" HorizontalAlignment="Left" Margin="128,359,0,0" Name="textBox10" VerticalAlignment="Top" Width="431" AcceptsReturn="True" />
+                            <Label Content="TRANSACTION WAS VOIDED" Height="28" HorizontalAlignment="Left" Margin="382,198,0,0" Name="label16" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red" />
+                        </Grid>
+                    </GroupBox>
+                    <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="12,454,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+                    <Button Content="Void" Height="23" HorizontalAlignment="Left" Margin="93,454,0,0" Name="button2" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="button2_Click" />
+                    <Button Content="Close" Height="23" HorizontalAlignment="Left" Margin="174,454,0,0" Name="button3" VerticalAlignment="Top" Width="75" Click="button3_Click" />
+                    <Button Content="&lt;&lt; Back" Height="23" HorizontalAlignment="Left" Margin="418,454,0,0" Name="button4" VerticalAlignment="Top" Width="75" Click="button4_Click" />
+                    <Button Content="Forward &gt;&gt;" Height="23" HorizontalAlignment="Left" Margin="496,454,0,0" Name="button5" VerticalAlignment="Top" Width="75" Click="button5_Click" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
